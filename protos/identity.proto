@@ -31,3 +31,6 @@ message  VerifyOtpRequest {
 }
 
 
+message VerifyOtpResponse {
+  bool success = 1;
+}

@@ -1,9 +1,28 @@
 syntax = "proto3";
 
-package common;
+package feed;
 
 
-message  Empty {
+service FeedService {
+    rpc GedFeed(GetFeedRequest) returns (GetFeedResponse);
+}
 
-    
+
+message GetFeedRequest{
+    string userId = 1;
+}
+
+
+
+message FeedItem {
+   string id = 1;
+   string title = 2;
+   string category = 3;
+}
+
+
+
+
+message GetFeedResponse{
+    repeated FeedItem items = 1;
 }
