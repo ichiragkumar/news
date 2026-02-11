@@ -1,0 +1,33 @@
+syntax = "proto3"; 
+
+
+
+package identity;
+
+
+
+service IdentityService{
+    rpc Register(RegisterRequest) returns (RegisterResponse);
+    rpc VerifyOtp(VerifyOtpRequest) returns (VerifyOtpResponse);
+}
+
+
+
+message RegisterRequest{
+    string email = 1;
+}
+
+
+message RegisterResponse{
+    string userId = 1;
+    string otpref = 2;
+}
+
+
+
+message  VerifyOtpRequest {
+    string userId = 1;
+    string otp = 2;
+}
+
+
